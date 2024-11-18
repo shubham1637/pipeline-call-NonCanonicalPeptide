@@ -46,6 +46,8 @@ process parse_CIRCexplorer {
     extra_args = generate_args(params, 'parseCIRCexplorer', ARGS, FLAGS)
     """
     set -euo pipefail
+    export MPLCONFIGDIR=$PWD/.matplotlib
+    mkdir -p $MPLCONFIGDIR
 
     moPepGen parseCIRCexplorer \
         --input-path ${input_file} \

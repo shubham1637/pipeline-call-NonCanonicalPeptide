@@ -40,6 +40,8 @@ process parse_STARFusion {
     extra_args = generate_args(params, 'parseSTARFusion', ARGS, FLAGS)
     """
     set -euo pipefail
+    export MPLCONFIGDIR=$PWD/.matplotlib
+    mkdir -p $MPLCONFIGDIR
 
     moPepGen parseSTARFusion \
         --input-path ${input_file} \

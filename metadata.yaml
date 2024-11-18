@@ -3,8 +3,8 @@ Category: "pipeline"
 Description: "Nextflow pipeline to call non-canonical peptides as custom databases for proteogenomic analysis"
 Maintainers: "Chenghao Zhu ChenghaoZhu@mednet.ucla.edu"
 Contributors: ["Chenghao Zhu", "Lydia Y. Liu yiyangliu@mednet.ucla.edu"]
-Languages: ["Nextflow", "Docker"]
-Dependencies: ["Java", "Nextflow", "Docker"]
+Languages: ["Nextflow", "Singularity"]
+Dependencies: ["Java", "Nextflow", "Singularity"]
 References: ""
 Tools: []
 Engineering_Owner: []

@@ -42,6 +42,8 @@ process parse_Arriba {
     extra_args = generate_args(params, 'parseArriba', ARGS, FLAGS)
     """
     set -euo pipefail
+    export MPLCONFIGDIR=$PWD/.matplotlib
+    mkdir -p $MPLCONFIGDIR
 
     moPepGen parseArriba \
         --input-path ${input_file} \

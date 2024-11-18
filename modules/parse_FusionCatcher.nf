@@ -41,6 +41,8 @@ process parse_FusionCatcher {
     extra_args = generate_args(params, 'parseFusionCatcher', ARGS, FLAGS)
     """
     set -euo pipefail
+    export MPLCONFIGDIR=$PWD/.matplotlib
+    mkdir -p $MPLCONFIGDIR
 
     moPepGen parseFusionCatcher \
         --input-path ${input_file} \

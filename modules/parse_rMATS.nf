@@ -51,6 +51,8 @@ process parse_rMATS {
     extra_args = generate_args(params, 'parseRMATS', ARGS, FLAGS)
     """
     set -euo pipefail
+    export MPLCONFIGDIR=$PWD/.matplotlib
+    mkdir -p $MPLCONFIGDIR
 
     moPepGen parseRMATS \
         ${input_args} \

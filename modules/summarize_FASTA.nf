@@ -47,6 +47,8 @@ process summarize_FASTA {
     extra_args = generate_args(params, 'summarizeFasta', ARGS, FLAGS)
     """
     set -euo pipefail
+    export MPLCONFIGDIR=$PWD/.matplotlib
+    mkdir -p $MPLCONFIGDIR
 
     moPepGen summarizeFasta \
         --gvf ${gvfs} \

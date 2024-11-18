@@ -24,6 +24,8 @@ process merge_FASTA {
     output_fasta = "${params.sample_id}_merged_peptides.fasta"
     """
     set -euo pipefail
+    export MPLCONFIGDIR=$PWD/.matplotlib
+    mkdir -p $MPLCONFIGDIR
 
     moPepGen mergeFasta \\
         --input-path ${input_fasta} \\

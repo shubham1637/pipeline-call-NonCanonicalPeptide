@@ -31,7 +31,7 @@ process call_VariantPeptide {
 
     container params.docker_image_moPepGen
 
-    containerOptions "--shm-size=10.24gb"
+    // containerOptions "--shm-size=10.24gb"
 
     publishDir params.final_output_dir,
         mode: 'copy',
@@ -57,6 +57,8 @@ process call_VariantPeptide {
     extra_args = generate_args(params, 'callVariant', ARGS, FLAGS)
     """
     set -euo pipefail
+    export MPLCONFIGDIR=$PWD/.matplotlib
+    mkdir -p $MPLCONFIGDIR
 
     moPepGen callVariant \
         --input-path ${gvf_files} \

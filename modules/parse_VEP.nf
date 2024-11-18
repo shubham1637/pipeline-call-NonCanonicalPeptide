@@ -38,6 +38,8 @@ process parse_VEP {
     args = generate_args(params, 'parseVEP', ARGS, FLAGS)
     """
     set -euo pipefail
+    export MPLCONFIGDIR=$PWD/.matplotlib
+    mkdir -p \$MPLCONFIGDIR
 
     moPepGen parseVEP \
         --input-path ${input_file} \

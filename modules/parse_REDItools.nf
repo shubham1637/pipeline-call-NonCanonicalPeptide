@@ -43,6 +43,8 @@ process parse_REDItools {
     extra_args = generate_args(params, 'parseREDItools', ARGS, FLAGS)
     """
     set -euo pipefail
+    export MPLCONFIGDIR=$PWD/.matplotlib
+    mkdir -p $MPLCONFIGDIR
 
     moPepGen parseREDItools \
         --input-path ${input_file} \
